@@ -12,7 +12,7 @@ class FileWalker
 
         // do not split file if list length less than MIN_CHUNK_SIZE ids per chunk
         if($lineListLength < MIN_CHUNK_SIZE * $workerNumber) {
-            $this->iterateFileChunk($filename, $callable, $chunkLength);
+            $this->iterate($filename, $callable, $chunkLength);
             return;
         }
 
