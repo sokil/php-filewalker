@@ -4,7 +4,7 @@ class FileWalker
 {
     public function iterateForked($filename, $callable, $workerNumber = 8, $chunkLength = 50)
     {
-        define('MIN_CHUNK_SIZE', 1);
+        define('MIN_CHUNK_SIZE', 10);
         define('CHUNK_FILENAME_PREFIX', '/tmp/chunk');
 
         // get length of id list
