@@ -56,7 +56,7 @@ class FileWalker
                 $status = null;
                 $result = pcntl_waitpid($pid, $status, WNOHANG);
 
-                if(-1 == $result || 0 == $result) {
+                if(-1 == $result || 0 < $result) {
                     unset($workerPidList[$workerId]);
                     fputs(
                         $stderr,
@@ -64,6 +64,8 @@ class FileWalker
                     );
                 }
             }
+            
+            sleep(1);
         }
         fclose($stderr);
 
